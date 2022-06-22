@@ -17,7 +17,7 @@ filterlist = FILTER selected BY target MATCHES '.*Holland.*';
 
 /* Group on the location and target */
 groupbylist = GROUP filterlist by (location, target);
-// Add the count column
+// Add the count column */
 countlist = FOREACH groupbylist GENERATE FLATTEN(group) as (location, target), COUNT($1);
 
 /* Order the list alphabetically based on the location column */
